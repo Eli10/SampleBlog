@@ -1,3 +1,4 @@
+ <%= javascript_include_tag "application" %>
 <p><%= comment.author %> said:</p>
 
 
@@ -8,5 +9,4 @@
 
 
 
-<%= link_to 'Destroy', [comment.post, comment],
-                   method: :delete, data: { confirm: 'Are you sure?' } %>
+<%= link_to 'Destroy',  @post,  method: :delete, data: { confirm: 'Are you sure?' } %>

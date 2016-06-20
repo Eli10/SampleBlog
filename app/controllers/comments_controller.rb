@@ -11,19 +11,18 @@ class CommentsController < ApplicationController
 		end
 
 		def destroy
-			@post = Post.find(params[:post_id])
-			@comment = @post.comments.find(params[:id])
+           @post = Post.find(params[:post_id])
+           @comment = @post.comments.find(params[:id])
 
-			@comment.destroy
-   			respond_to do |format|
-      			format.html { redirect_to @post, notice: 'Comment was successfully destroyed.' }
-      			format.json { head :no_content }
-    	end
+           @comment.destroy
+           respond_to do |format|
+             format.html { redirect_to @post }
+             format.json { head :no_content }
+           end
+		end
+end
 
-	end
-
-
-	private
+private
 
 	def comment_params
 		params.require(:comment).permit(:author, :body, :emailaddress)
