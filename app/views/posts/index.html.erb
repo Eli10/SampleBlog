@@ -3,6 +3,7 @@
 
 <% @posts.each do |post| %>
 <h2><%= link_to post.title, post %></h2>
+<p>By:<%= post.author %></p>
 <p><i><%= friendly_date post.created_at %></i></p>
 <p><%= post.body %></p>
 <p>
